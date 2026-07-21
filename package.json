@@ -1,0 +1,32 @@
+{
+  "name": "qimat-almanara-hydrotech-erp",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@10.8.2",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "db:generate": "prisma generate --schema=database/prisma/schema.prisma",
+    "db:push": "prisma db push --schema=database/prisma/schema.prisma",
+    "db:migrate": "prisma migrate dev --schema=database/prisma/schema.prisma",
+    "db:studio": "prisma studio --schema=database/prisma/schema.prisma"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "turbo": "^2.0.14",
+    "prisma": "^6.1.0",
+    "typescript": "^5.7.2"
+  },
+  "allowScripts": {
+    "@prisma/client@6.19.3": true,
+    "@prisma/engines@6.19.3": true,
+    "prisma@6.19.3": true
+  },
+  "prisma": {
+    "seed": "tsx database/seed/seed.ts"
+  }
+}
